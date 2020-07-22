@@ -7,6 +7,17 @@ class PedirAccion extends Component {
             <div>
 
 
+                <div class="ui form message">
+                    <div class="fields">
+                        <div class="field">
+
+                            <a href="/" className=" ui  mini button green ">Inicio</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         )
     }
