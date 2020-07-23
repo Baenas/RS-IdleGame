@@ -6,7 +6,8 @@ import 'semantic-ui-css/semantic.min.css'
 
 import General from './components/Vistas/General.js'
 import PedirAccion from './components/Formularios/PedirAccion.js'
-
+import ResultadoRecuento from './components//Formularios/ResultadoRecuento.js'
+import Tabla1 from './components/test/Tabla1.js'
 
 class App extends Component {
   render() {
@@ -17,7 +18,9 @@ class App extends Component {
             <Router>
               <div>
                 <Route exact path="/" component={General} />
-                <Route exact path="/peticion" component={PedirAccion} />
+                <Route exact path="/peticion/:destino" component={PedirAccion} />
+                <Route exact path="/test/tablas" component={Tabla1} />
+                <Route exact path="/recuento" component={ResultadoRecuento} />
 
 
 

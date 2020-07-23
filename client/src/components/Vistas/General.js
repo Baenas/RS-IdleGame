@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopBar from '../Bars/TopBar'
+
 class General extends Component {
 
     render() {
@@ -33,12 +33,24 @@ class General extends Component {
 
                         <div class="content">
                             Lista de acciones
-    <div class="sub header">Selecciona el tipo de solicitud que necesitas </div>
+                        <div class="sub header">Selecciona el tipo de solicitud que necesitas </div>
                         </div>
                     </h2>
-                    <a href="/peticion"> <button class="ui  button brown">Peticion Almacen</button> </a>
-                    <a href="/peticion"><button class="ui  button blue">Peticion Mecanico</button> </a>
+                    <a href="/peticion/almacen"> <button class="ui  button brown">Peticion Almacen</button> </a>
+                    <a href="/peticion/mantenimiento"><button class="ui  button blue">Peticion Mantenimiento</button> </a>
+
                 </div>
+
+                <br></br>
+                <div className="container ui ">
+
+
+
+                    <a href="/test/tablas"> <button class="ui  button  purple">Tablas</button> </a>
+
+                </div>
+
+
 
 
 
