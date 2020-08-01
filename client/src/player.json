@@ -1,8 +1,28 @@
 [
   {
-    "gold": 0,
-    "silver": 50,
-    "Feather": 5,
-    "ArrowShaft": 0
+    "items": [
+      {
+        "name": "Feather",
+        "own": 5
+      },
+      {
+        "name": "ArrowShaft",
+        "own": 0
+      },
+      {
+        "name": "Apple",
+        "own": 1
+      }
+    ],
+    "coins": [
+      {
+        "name": "gold",
+        "own": 0
+      },
+      {
+        "name": "silver",
+        "own": 50
+      }
+    ]
   }
 ]

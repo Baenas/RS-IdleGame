@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ItemInput from '../Input/ItemInput'
 import GetPlayerInfo from '../../services/GetPlayerInfo'
+import GridItems from './GridItems'
+import GridCoins from './GridCoins'
+
+import GridItemStock from './GridItemStock'
 
 class General extends Component {
   render() {
@@ -11,28 +15,16 @@ class General extends Component {
 
           </div>
           <div className=" site-main ">
-            <span className=" btn btn-warning" >GOLD : <GetPlayerInfo money="gold" /></span>
-            <span className=" btn btn-info" >SILVER  :  <GetPlayerInfo money="silver" /> </span>
 
+            <GridCoins />
           </div>
 
-          <GetPlayerInfo item="Feather" />
 
+          <GridItemStock />
         </div>
-        <div className=" site-footer cell-8">
+        <GridItems />
 
-          <div className=" grid">
 
-            <div className=" cell-3 btn btn-default btn-ghost">
-              <ItemInput name="Feather" />
-            </div>
-            <div className="cell-3 btn btn-default btn-ghost">
-              <ItemInput name="ArrowShaft" />
-            </div>
-
-          </div>
-
-        </div>
       </div>
 
 

@@ -4,13 +4,23 @@
     "name": "Feather",
     "value": 9,
     "maxstack": 50000,
-    "img": "/asset/Feather.png"
+    "img": "/asset/Feather.png",
+    "interval": 10
   },
   {
     "id": 1,
     "name": "ArrowShaft",
     "value": 15,
     "maxstack": 50000,
-    "img": "/asset/Arrowshaft1.png"
+    "img": "/asset/Arrowshaft1.png",
+    "interval": 5
+  },
+  {
+    "id": 2,
+    "name": "Apple",
+    "value": 3,
+    "maxstack": 10000,
+    "img": "/asset/Arrowshaft1.png",
+    "interval": 4
   }
 ]
