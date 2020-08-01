@@ -1,66 +1,43 @@
 import React, { Component } from 'react';
+import ItemInput from '../Input/ItemInput'
+import GetPlayerInfo from '../../services/GetPlayerInfo'
 
 class General extends Component {
+  render() {
+    return (
+      <div className="grid">
+        <div className="cell-4">
+          <div>
 
-    render() {
-        return (
-            <div>
+          </div>
+          <div className=" site-main ">
+            <span className=" btn btn-warning" >GOLD : <GetPlayerInfo money="gold" /></span>
+            <span className=" btn btn-info" >SILVER  :  <GetPlayerInfo money="silver" /> </span>
 
-                <div class="ui form message">
-                    <div class="fields">
-                        <div class="field">
+          </div>
 
-                            <a href="/" className=" ui button green ">Inicio</a>
+          <GetPlayerInfo item="Feather" />
 
-                        </div>
-                        <div class="field">
-                            <h2 className="field"> <i className="ui button  large  grey">username</i></h2>
+        </div>
+        <div className=" site-footer cell-8">
 
-                        </div>
+          <div className=" grid">
 
-                        <div class="field">
-
-                            <h2 className="field">Alertas :  <i>0</i> </h2>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div className="container ui ">
-
-
-                    <h2 class="ui header">
-
-                        <div class="content">
-                            Lista de acciones
-                        <div class="sub header">Selecciona el tipo de solicitud que necesitas </div>
-                        </div>
-                    </h2>
-                    <a href="/peticion/almacen"> <button class="ui  button brown">Peticion Almacen</button> </a>
-                    <a href="/peticion/mantenimiento"><button class="ui  button blue">Peticion Mantenimiento</button> </a>
-
-                </div>
-
-                <br></br>
-                <div className="container ui ">
-
-
-
-                    <a href="/test/tablas"> <button class="ui  button  purple">Tablas</button> </a>
-
-                </div>
-
-
-
-
-
-
-
+            <div className=" cell-3 btn btn-default btn-ghost">
+              <ItemInput name="Feather" />
             </div>
-        )
-    }
+            <div className="cell-3 btn btn-default btn-ghost">
+              <ItemInput name="ArrowShaft" />
+            </div>
 
+          </div>
+
+        </div>
+      </div>
+
+
+    )
+  }
 }
-
 
 export default General

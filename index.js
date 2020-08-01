@@ -3,12 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 // IMPORT MODELS
-// require('./models/Product');
-// require('./models/User');
-// require('./models/Notes');
-// require('./models/Day');
-// require('./models/Salas');
-// require('./models/Ordenes');
+
 const app = express();
 require('dotenv').config();
 // mongoose.Promise = global.Promise;
@@ -25,13 +20,7 @@ require('dotenv').config();
 //   })
 // );
 //IMPORT ROUTES
-// require('./routes/productRoutes')(app);
-// require('./routes/userRoutes')(app);
-// require('./routes/notesRouter')(app);
-// require('./routes/auth')(app);
-// require('./routes/dayRouter')(app);
-// require('./routes/SalasRouter')(app);
-// require('./routes/OrdenRouter')(app);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 

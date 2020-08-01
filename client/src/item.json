@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "name": "Feather",
+    "value": 9,
+    "maxstack": 50000,
+    "img": "/asset/Feather.png"
+  },
+  {
+    "id": 1,
+    "name": "ArrowShaft",
+    "value": 15,
+    "maxstack": 50000,
+    "img": "/asset/Arrowshaft1.png"
+  }
+]
