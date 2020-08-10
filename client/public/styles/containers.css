@@ -1,0 +1,14 @@
+.item-input{
+    background-color:rgba(230,230,230);
+    border:1px solid black;
+    padding: 5px;
+    margin:4px;
+}
+
+.content-input{
+    display:flex;
+    flex-direction:row;
+justify-content:baseline;
+align-items:center;
+    flex-wrap:wrap;
+}

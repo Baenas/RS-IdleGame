@@ -1,31 +1,20 @@
 import React, { Component } from 'react';
-import ItemInput from '../Input/ItemInput'
-import GetPlayerInfo from '../../services/GetPlayerInfo'
-import GridItems from './GridItems'
-import GridCoins from './GridCoins'
 
-import GridItemStock from './GridItemStock'
+import Nav from '../Others/NavBar'
 
 class General extends Component {
   render() {
     return (
-      <div className="grid">
-        <div className="cell-4">
-          <div>
+      <div id="App">
+        <Nav pageWrapId={"page-wrap"} outerContainerId={"App"} />
 
-          </div>
-          <div className=" site-main ">
-
-            <GridCoins />
-          </div>
-
-
-          <GridItemStock />
+        <div id="page-wrap">
+          <h1 className="title-page">Runescape IDLE Game </h1>
         </div>
-        <GridItems />
-
-
       </div>
+
+
+
 
 
     )

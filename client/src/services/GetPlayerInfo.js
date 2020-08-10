@@ -1,29 +1,41 @@
 import React, { Component } from 'react';
-import playerdata from '../player.json'
+import apiClient from '../services/apiClient'
 
-import itemdata from '../item.json'
 class GetCoins extends Component {
 
   state = {
-    data: playerdata[0].items,
-    gold: 0,
-    silver: 0
+    thisitem: []
+    // gold: 0,
+    // silver: 0
   }
 
   componentDidMount() {
 
+    apiClient.playerGetByName("Baenas").then((items => {
+      let itemdata = items.data
 
-    this.setState({ gold: playerdata.map((d) => d.gold) })
-    this.setState({ silver: playerdata.map((d) => d.silver) })
+      this.setState({ thisitem: itemdata })
+
+    }))
+
+    // this.setState({ gold: playerdata.map((d) => d.gold) })
+    // this.setState({ silver: playerdata.map((d) => d.silver) })
 
 
   }
 
   render() {
-    const GetItemName = this.state.data.map((item, index) => {
+    const GetItemName = this.state.thisitem.map((item, index) => {
       return (
 
-        <span key={index}> {this.props.item === item.name ? <span>  {item.name}  {item.own} </span> : null} </span >
+        <span key={index}> {this.props.item === item.Recurso ? <span>  {item.Recurso}  {item.Valor} </span> : null} </span >
+
+      )
+    })
+    const GetItemNameSimple = this.state.thisitem.map((item, index) => {
+      return (
+
+        <span key={index}> {this.props.item === item.Recurso ? <span>    {item.Valor} </span> : null} </span >
 
       )
     })
@@ -31,7 +43,8 @@ class GetCoins extends Component {
 
       <span>
 
-        {GetItemName}
+        {this.props.type === "simple" ? GetItemNameSimple : GetItemName}
+
 
         {/*   <span> {this.props.money === "gold" ? <span>  {this.props.item}  {this.state.gold} </span> : null} </span >
         <span> {this.props.money === "silver" ? <span>  {this.props.item}  {this.state.silver} </span> : null} </span >

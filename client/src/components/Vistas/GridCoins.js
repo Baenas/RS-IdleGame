@@ -1,27 +1,40 @@
 import React, { Component } from 'react'
 import playerdata from '../../player.json'
+import apiClient from '../../services/apiClient'
 
 
 class GridCoins extends Component {
   state = {
+    thisitem: []
 
 
   }
+  componentDidMount() {
+    apiClient.playerGetByName("Baenas").then((items => {
+      let itemdata = items.data
+
+      this.setState({ thisitem: itemdata })
+
+    }))
+  }
   render() {
-    const GetItemName = playerdata[0].coins.map((item, index) => {
+
+
+
+    const GetCoin = this.state.thisitem.filter((item, index) => item.extra === "currency").map((item, index) => {
 
       return (
-        <span key={index} className=" btn btn-warning" >{item.name} : {item.own}</span>
+        <span key={index} className=" btn-currency" >{item.Recurso} : {item.Valor}</span>
       )
     })
     return (
 
 
-      <div className=" site-footer cell-8">
+      <div className="site-main">
 
-        <div className=" grid">
+        <div className=" ">
 
-          {GetItemName}
+          {GetCoin}
 
 
 

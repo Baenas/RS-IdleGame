@@ -2,40 +2,50 @@ import React, { Component } from 'react'
 
 import GetPlayerInfo from '../../services/GetPlayerInfo'
 
-import itemdata from '../../item.json'
-import playerdata from '../../player.json'
+import apiClient from '../../services/apiClient'
 
 class GridItems extends Component {
   state = {
+    thisitem: []
 
 
   }
+  componentDidMount() {
+    apiClient.playerGetByName("Baenas").then((items => {
+      let itemdata = items.data
+
+      this.setState({ thisitem: itemdata })
+
+    }))
+  }
   render() {
-    const GetStock = playerdata[0].items.map((item, index) => {
-      console.log(playerdata)
+
+    const GetStock = this.state.thisitem.filter((item, index) => item.extra !== "currency").map((item, index) => {
+
+      return (
+        <li key={index}>    <GetPlayerInfo item={item.Recurso} /> </li>
+      )
+    })
+
+    const GetStockSingle = this.state.thisitem.filter((item, index) => item.Recurso === this.props.single && item.extra !== "currency").map((item, index) => {
       return (
 
-        <li key={index}>    <GetPlayerInfo item={item.name} /> </li>
+        <span key={index} >  <GetPlayerInfo type="simple" item={item.Recurso} /></span>
 
       )
-
-
-
     })
+
+
+
+
     return (
 
 
-      <div className=" site-footer cell-8" >
 
-        <div className=" grid">
-          <ul >
-            {GetStock}
+      this.props.single === "all" ? GetStock : GetStockSingle
 
-          </ul>
 
-        </div>
 
-      </div>
 
     )
   }

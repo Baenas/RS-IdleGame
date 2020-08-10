@@ -3,9 +3,16 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 // IMPORT MODELS
+const itemRouter = require("./routes/idle-items");
+const playerRouter = require("./routes/idle-player");
+const sqlite3 = require('sqlite3')
 
 const app = express();
+app.use("/", itemRouter);
+app.use("/", playerRouter);
+
 require('dotenv').config();
+
 // mongoose.Promise = global.Promise;
 // const dbPath = process.env.MONGODB_URI;
 // mongoose
@@ -14,13 +21,12 @@ require('dotenv').config();
 //   .catch(err => console.log(err));
 // app.use(bodyParser.json());
 
-// app.use(
-//   cors({
-//     origin: process.env.backURl,
-//   })
-// );
+app.use(
+  cors({
+    origin: process.env.front
+  })
+);
 //IMPORT ROUTES
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
@@ -30,8 +36,9 @@ if (process.env.NODE_ENV === 'production') {
   })
 
 }
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`app running on port ${PORT}`)
 });
+
+module.exports = app;

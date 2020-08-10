@@ -2,10 +2,9 @@ import React, {
   Component
 } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import 'semantic-ui-css/semantic.min.css'
 
 import General from './components/Vistas/General.js'
-
+import Crating from './components/Pages/Crafting'
 
 class App extends Component {
   render() {
@@ -16,6 +15,7 @@ class App extends Component {
             <Router>
               <div>
                 <Route exact path="/" component={General} />
+                <Route exact path="/craft" component={Crating} />
 
 
 

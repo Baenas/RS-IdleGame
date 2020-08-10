@@ -5,7 +5,8 @@
     "value": 9,
     "maxstack": 50000,
     "img": "/asset/Feather.png",
-    "interval": 10
+    "interval": 10,
+    "tier": 0
   },
   {
     "id": 1,
@@ -13,14 +14,16 @@
     "value": 15,
     "maxstack": 50000,
     "img": "/asset/Arrowshaft1.png",
-    "interval": 5
+    "interval": 3,
+    "tier": 0
   },
   {
     "id": 2,
     "name": "Apple",
     "value": 3,
     "maxstack": 10000,
-    "img": "/asset/Arrowshaft1.png",
-    "interval": 4
+    "img": "/asset/Cooking_apple.png",
+    "interval": 2,
+    "tier": 0
   }
 ]

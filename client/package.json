@@ -4,13 +4,17 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@trendmicro/react-sidenav": "^0.5.0",
     "axios": "^0.19.0",
     "http-proxy-middleware": "^0.19.1",
-    "react": "^16.8.6",
+    "inline-style-prefixer": "^6.0.0",
+    "rc-progress": "^3.0.0",
+    "react": "^16.13.1",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.0.1",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "snapsvg-cjs": "0.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "imports-loader": "^1.1.0"
   }
 }
