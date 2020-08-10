@@ -23,6 +23,12 @@ class ApiClient {
         return this.apiClient.get(`/player/${name}`);
     }
 
+    enemyGet() {
+        return this.apiClient.get("/enemy");
+    }
+    enemyGetByName(name) {
+        return this.apiClient.get(`/enemy/${name}`);
+    }
 }
 
 const apiClient = new ApiClient();

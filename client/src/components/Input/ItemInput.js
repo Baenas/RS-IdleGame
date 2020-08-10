@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import playerdata from '../../player.json'
 import apiClient from '../../services/apiClient'
 import GridItemStock from '../Vistas/GridItemStock'
 import { Line, Circle } from 'rc-progress';

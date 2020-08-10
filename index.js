@@ -5,11 +5,16 @@ const cors = require('cors')
 // IMPORT MODELS
 const itemRouter = require("./routes/idle-items");
 const playerRouter = require("./routes/idle-player");
+const enemyRouter = require("./routes/idle-enemy");
+
 const sqlite3 = require('sqlite3')
+
 
 const app = express();
 app.use("/", itemRouter);
 app.use("/", playerRouter);
+app.use("/", enemyRouter);
+
 
 require('dotenv').config();
 
