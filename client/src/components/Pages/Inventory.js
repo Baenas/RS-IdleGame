@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import apiClient from '../../services/apiClient'
 import ImageFromName from '../scripts/ImageFromName'
+import GridCoins from '../../components/Vistas/GridCoins'
+
 class Inventory extends Component {
     state = {
         items: []
@@ -20,7 +22,7 @@ class Inventory extends Component {
         let itemlist = items.filter(item => item.extra !== "currency").map((item, index) => {
             return (
 
-                <div className="item-input" onClick={this.handleClick} >
+                <div key={index} className="item-input" onClick={this.handleClick} >
 
                     {item.Recurso}
                     <ImageFromName name={item.Recurso} />
@@ -34,9 +36,16 @@ class Inventory extends Component {
             )
         })
         return (
+            <div>
+                <div className="center">
+                    <GridCoins />
+                </div>
 
-            <div className="content-input">
-                {itemlist}
+                <div className="content-input">
+
+                    {itemlist}
+                </div>
+
             </div>
         )
     }

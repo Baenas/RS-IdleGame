@@ -32,18 +32,51 @@ class EnemyInput extends Component {
 
     }
     handleClick = () => {
+
         const { thisitem, actualvalue, toAdd } = this.state
-        this.setState({ toAdd: actualvalue[0].Valor + thisitem.drop1amount })
 
-        if (this.state.percent > 0) {
-            this.setState({ percent: this.state.percent - 10 })
+        if (actualvalue.length === 0) {
+            this.setState({ toAdd: thisitem.drop1amount })
 
-        } else if (this.state.percent >= 0) {
+            if (this.state.percent > 0) {
+                this.setState({ percent: this.state.percent - 10 })
+
+            } else if (this.state.percent >= 0) {
 
 
-            apiClient.playerUpdateItem({ Valor: toAdd, Player: "Baenas", Recurso: this.state.thisitem.drop1 })
-            this.setState({ percent: 100 })
+                apiClient.playerUpdateItem({ Valor: toAdd, Player: "Baenas", Recurso: this.state.thisitem.drop1 })
+                this.setState({ percent: 100 })
 
+
+            }
+        } else {
+
+
+
+            apiClient.playerGetByName("Baenas").then((response) => {
+
+                this.setState({ actualvalue: response.data.filter(item => item.Recurso === this.state.thisitem.drop1) })
+            })
+
+
+            if (actualvalue[0].Valor >= 0) {
+                this.setState({ toAdd: actualvalue[0].Valor += thisitem.drop1amount })
+
+            }
+
+
+
+            if (this.state.percent > 0) {
+                this.setState({ percent: this.state.percent - 10 })
+
+            } else if (this.state.percent >= 0) {
+
+
+                apiClient.playerUpdateItem({ Valor: toAdd, Player: "Baenas", Recurso: this.state.thisitem.drop1 })
+                this.setState({ percent: 100 })
+
+
+            }
         }
     }
     updatepercent = () => {

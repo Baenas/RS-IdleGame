@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import apiClient from '../../services/apiClient'
 import GridItemStock from '../Vistas/GridItemStock'
 import { Line } from 'rc-progress';
-import ImageFromName from '../scripts/ImageFromName'
 class CraftInput extends Component {
 
   state = {
