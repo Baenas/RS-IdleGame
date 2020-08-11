@@ -8,7 +8,9 @@ class EnemyInput extends Component {
         name: this.props.name,
         thisitem: [],
         percent: 100,
-        interv: 0
+        interv: 0,
+        actualvalue: [],
+        toAdd: 0
     }
     componentDidMount() {
 
@@ -21,16 +23,28 @@ class EnemyInput extends Component {
             })
         }))
 
+        apiClient.playerGetByName("Baenas").then((response) => {
+
+            this.setState({ actualvalue: response.data.filter(item => item.Recurso === this.state.thisitem.drop1) })
+        })
 
         this.lock = false
 
     }
     handleClick = () => {
+        const { thisitem, actualvalue, toAdd } = this.state
+        this.setState({ toAdd: actualvalue[0].Valor + thisitem.drop1amount })
 
-        this.setState({ percent: this.state.percent - 10 })
+        if (this.state.percent > 0) {
+            this.setState({ percent: this.state.percent - 10 })
+
+        } else if (this.state.percent >= 0) {
 
 
+            apiClient.playerUpdateItem({ Valor: toAdd, Player: "Baenas", Recurso: this.state.thisitem.drop1 })
+            this.setState({ percent: 100 })
 
+        }
     }
     updatepercent = () => {
         this.lock = true;
@@ -45,7 +59,7 @@ class EnemyInput extends Component {
             // find.own++
 
             this.lock = false;
-            this.setState({ percent: 0 })
+            this.setState({ percent: 100 })
             clearInterval(this.interval);
 
         }

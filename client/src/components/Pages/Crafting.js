@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 import Nav from '../Others/NavBar'
-import GridItems from '../../components/Vistas/GridItems'
+import GridCrafted from '../../components/Vistas/GridCrafted'
 
 import GridCoins from '../../components/Vistas/GridCoins'
-import GridItemStock from '../../components/Vistas/GridItemStock'
 class Crating extends Component {
     render() {
         return (
@@ -19,7 +18,7 @@ class Crating extends Component {
                 </div>
 
                 <div className="  " >
-                    <GridItems />
+                    <GridCrafted />
 
                 </div>
 

@@ -1,16 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const cors = require('cors')
 // IMPORT MODELS
 const itemRouter = require("./routes/idle-items");
 const playerRouter = require("./routes/idle-player");
 const enemyRouter = require("./routes/idle-enemy");
 
-const sqlite3 = require('sqlite3')
 
 
 const app = express();
+var bodyParser = require('body-parser')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 app.use("/", itemRouter);
 app.use("/", playerRouter);
 app.use("/", enemyRouter);
@@ -24,7 +29,8 @@ require('dotenv').config();
 //   .connect(dbPath, { useFindAndModify: false })
 //   .then(() => console.log("MongoDB Connected..."))
 //   .catch(err => console.log(err));
-// app.use(bodyParser.json());
+
+
 
 app.use(
   cors({

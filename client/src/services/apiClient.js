@@ -22,6 +22,12 @@ class ApiClient {
     playerGetByName(name) {
         return this.apiClient.get(`/player/${name}`);
     }
+    playerInsertItem(data) {
+        return this.apiClient.post(`/player`, data);
+    }
+    playerUpdateItem(data) {
+        return this.apiClient.patch(`/player`, data);
+    }
 
     enemyGet() {
         return this.apiClient.get("/enemy");
