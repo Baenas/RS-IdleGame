@@ -5,7 +5,7 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@trendmicro/react-sidenav": "^0.5.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "http-proxy-middleware": "^0.19.1",
     "inline-style-prefixer": "^6.0.0",
     "rc-progress": "^3.0.0",
