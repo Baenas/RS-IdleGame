@@ -25,7 +25,7 @@
     "react-burger-menu": "^2.7.1",
     "react-moment": "^0.9.7",
     "semantic-ui-css": "^2.4.1",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.3"
   },
   "devDependencies": {
     "concurrently": "^4.1.1",
